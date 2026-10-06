@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Tab styles */
+#tab-global:checked ~ .flex label[for="tab-global"],
+#tab-personal:checked ~ .flex label[for="tab-personal"] {
+    @apply border-indigo-600 text-indigo-600;
+}
+
+#tab-global:checked ~ .tab-content:nth-of-type(2) {
+    @apply block;
+}
+
+#tab-global:checked ~ .tab-content:nth-of-type(3) {
+    @apply hidden;
+}
+
+#tab-personal:checked ~ .tab-content:nth-of-type(2) {
+    @apply hidden;
+}
+
+#tab-personal:checked ~ .tab-content:nth-of-type(3) {
+    @apply block;
+}
