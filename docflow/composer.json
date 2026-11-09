@@ -1,0 +1,14 @@
+{
+    "name": "student/docflow",
+    "description": "DocFlow backend project",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "intervention/image": "^3.0",
+        "dompdf/dompdf": "^3.1"
+    }
+}

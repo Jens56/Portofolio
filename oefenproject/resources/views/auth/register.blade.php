@@ -1,0 +1,85 @@
+
+<x-layout>
+    <x-slot:title>
+        Register
+    </x-slot:title>
+
+    <div class="hero min-h-[calc(100vh-16rem)]">
+        <div class="hero-content flex-col">
+            <div class="flex ml-[460px] card w-96 bg-base-100">
+                <div class="card-body">
+                    <h1 class="text-3xl font-bold text-center mb-6">Create Account</h1>
+
+                    <form method="POST" action="/register">
+                        @csrf
+
+                        <label class="floating-label mb-6">
+                            <input type="text"
+                                   name="name"
+                                   placeholder="John Doe"
+                                   value="{{ old('name') }}"
+                                   class="input input-bordered @error('name') input-error @enderror"
+                                   required>
+                            <span>Name</span>
+                        </label>
+                        @error('name')
+                            <div class="label -mt-4 mb-2">
+                                <span class="label-text-alt text-error">{{ $message }}</span>
+                            </div>
+                        @enderror
+
+                        <label class="floating-label mb-6">
+                            <input type="email"
+                                   name="email"
+                                   placeholder="[mail@example.com](<mailto:mail@example.com>)"
+                                   value="{{ old('email') }}"
+                                   class="input input-bordered @error('email') input-error @enderror"
+                                   required>
+                            <span>Email</span>
+                        </label>
+                        @error('email')
+                            <div class="label -mt-4 mb-2">
+                                <span class="label-text-alt text-error">{{ $message }}</span>
+                            </div>
+                        @enderror
+
+                        <label class="floating-label mb-6">
+                            <input type="password"
+                                   name="password"
+                                   placeholder="••••••••"
+                                   class="input input-bordered @error('password') input-error @enderror"
+                                   required>
+                            <span>Password</span>
+                        </label>
+                        @error('password')
+                            <div class="label -mt-4 mb-2">
+                                <span class="label-text-alt text-error">{{ $message }}</span>
+                            </div>
+                        @enderror
+
+                        <label class="floating-label mb-6">
+                            <input type="password"
+                                   name="password_confirmation"
+                                   placeholder="••••••••"
+                                   class="input input-bordered"
+                                   required>
+                            <span>Confirm Password</span>
+                        </label>
+
+                        <div class="form-control mt-8">
+                            <button type="submit" class="btn w-84 bg-white border-blue-500 border-1 hover:bg-blue-500 hover:text-white">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="divider">OR</div>
+                    <p class="text-center text-sm">
+                        Already have an account?
+                        <a href="/login" class="link hover:text-blue-500">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-layout>

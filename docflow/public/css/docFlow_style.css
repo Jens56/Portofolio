@@ -1,0 +1,260 @@
+/* add this file to the css directory and add a corresponding link in the HTML file */
+
+/* ===== Basis ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  background: #f4f8fc;
+  color: #17324d;
+}
+
+/* ===== Layout ===== */
+.app {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  min-height: 100vh;
+}
+
+main {
+  min-width: 0;
+  padding-bottom: 60px;
+}
+
+section {
+  margin: 32px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background: linear-gradient(#0d3b66, #082a4b);
+  color: #fff;
+  padding: 20px 14px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #2f7dd1;
+  display: grid;
+  place-items: center;
+}
+
+.brand strong {
+  font-size: 24px;
+  display: block;
+}
+
+.brand strong span {
+  color: #7fb3e6;
+}
+
+.brand small {
+  opacity: 0.7;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 7px;
+}
+
+.sidebar a {
+  color: #dbe9f6;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.sidebar a:hover {
+  background: #1479da;
+}
+
+/* ===== Header ===== */
+header {
+  height: 68px;
+  background: #fff;
+  border-bottom: 1px solid #dce7f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 0 26px;
+  position: sticky;
+  top: 0;
+}
+
+header input {
+  width: min(360px, 50vw);
+  padding: 10px 13px;
+  border: 1px solid #dce7f2;
+  border-radius: 999px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0d3b66;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+/* ===== Teksten ===== */
+.eyebrow {
+  color: #2f7dd1;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+/* ===== Statistieken & panelen ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.stats article,
+.panel {
+  background: #fff;
+  border: 1px solid #dce7f2;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(13, 59, 102, 0.07);
+}
+
+.stats article {
+  padding: 21px;
+}
+
+.stats strong {
+  display: block;
+  font-size: 28px;
+  color: #0d3b66;
+}
+
+.stats span {
+  color: #6f8295;
+}
+
+.panel {
+  padding: 21px;
+}
+
+/* ===== Tabel ===== */
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 13px 10px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+th {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6f8295;
+}
+
+/* ===== Formulier ===== */
+form {
+  display: grid;
+  gap: 14px;
+  max-width: 650px;
+}
+
+label span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+input[type=text],
+input[type=file],
+select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #dce7f2;
+  border-radius: 9px;
+  background: #fff;
+}
+
+button {
+  justify-self: start;
+  border: 0;
+  background: #2f7dd1;
+  color: #fff;
+  padding: 11px 16px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+/* ===== Meldingen ===== */
+.notice {
+  margin: 18px 0;
+  padding: 13px 15px;
+  border-radius: 9px;
+  background: #eaf6ee;
+  color: #1c6e34;
+}
+
+.notice.error {
+  background: #fff0f0;
+  color: #a32626;
+}
+
+.backend-note {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f6f9fc;
+}
+
+.backend-note strong,
+.backend-note code {
+  display: block;
+  margin-bottom: 7px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  section {
+    margin: 20px 14px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
